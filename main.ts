@@ -1,12 +1,12 @@
 input.onSound(DetectedSound.Loud, function () {
     input.setSoundThreshold(SoundThreshold.Loud, 255)
-    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.InBackground)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Nyan), music.PlaybackMode.InBackground)
     basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
         `)
 })
 input.onGesture(Gesture.ScreenDown, function () {
@@ -28,7 +28,7 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (input.soundLevel() >= 230) {
+    if (input.soundLevel() >= 255) {
         모터_구동_중 = 모터_구동_중 == false
         basic.pause(500)
     }
